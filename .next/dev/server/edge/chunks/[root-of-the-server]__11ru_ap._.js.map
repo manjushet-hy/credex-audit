@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/middleware.ts"],"sourcesContent":["import { NextResponse } from 'next/server'\nimport type { NextRequest } from 'next/server'\n\nexport function middleware(request: NextRequest) {\n  // Scaffold for:\n  // - Rate limiting\n  // - Abuse prevention\n  // - Bot protection\n  \n  return NextResponse.next()\n}\n\nexport const config = {\n  matcher: '/api/:path*',\n}\r\n"],"names":["middleware","request","next","config","matcher"],"mappings":";;;;;;AAAA;AAAA;;AAGO,SAASA,WAAWC,OAAoB;IAC7C,gBAAgB;IAChB,kBAAkB;IAClB,qBAAqB;IACrB,mBAAmB;IAEnB,OAAO,6MAAY,CAACC,IAAI;AAC1B;AAEO,MAAMC,SAAS;IACpBC,SAAS;AACX"}}]
+}
