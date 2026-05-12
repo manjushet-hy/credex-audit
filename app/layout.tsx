@@ -1,5 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { Inter } from "next/font/google";
+import NexusAssistant from "@/components/NexusAssistant";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'Credex Audit | Enterprise AI SaaS Auditor',
@@ -13,9 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <div className="min-h-screen bg-[#020617] text-white">
           {children}
+          <NexusAssistant />
         </div>
       </body>
     </html>
