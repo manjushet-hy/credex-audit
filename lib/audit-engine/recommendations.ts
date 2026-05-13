@@ -300,9 +300,9 @@ export const runAlternativeToolAudit = (request: AuditRequest): AuditRecommendat
         // Scan ALL vendors for a better alternative for this tool's primary category
         ALL_VENDORS.forEach(altVendor => {
             if (altVendor.vendorId === tool.vendorId) return; // Skip current
-            
+
             // Check if alternative vendor covers the same use cases
-            const hasOverlap = altVendor.supportedUseCases.some(uc => 
+            const hasOverlap = altVendor.supportedUseCases.some(uc =>
                 currentVendor.supportedUseCases.includes(uc)
             );
             if (!hasOverlap) return;
@@ -311,10 +311,10 @@ export const runAlternativeToolAudit = (request: AuditRequest): AuditRecommendat
             const viableAltPlans = altVendor.plans.filter(p => {
                 if (p.pricePerUser === undefined) return false;
                 if (p.pricePerUser >= currentMonthlyPerSeat) return false; // Not cheaper
-                
+
                 // Match audience
                 if (p.targetAudience !== request.targetAudience && p.targetAudience !== 'individual') return false;
-                
+
                 // Match security requirements
                 if (request.requiredSecurity.needsPrivacyMode && !p.securityFlags.hasPrivacyMode) return false;
                 if (request.requiredSecurity.needsSSO && !p.securityFlags.hasSSO) return false;
@@ -325,7 +325,7 @@ export const runAlternativeToolAudit = (request: AuditRequest): AuditRecommendat
             if (viableAltPlans.length > 0) {
                 viableAltPlans.sort((a, b) => (a.pricePerUser || 0) - (b.pricePerUser || 0));
                 const bestAltPlan = viableAltPlans[0];
-                
+
                 const monthlyDelta = (currentMonthlyPerSeat - (bestAltPlan.pricePerUser || 0)) * tool.seats;
 
                 // Only recommend if savings are substantial (> 10% of current tool cost)

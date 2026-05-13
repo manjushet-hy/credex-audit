@@ -1,9 +1,11 @@
 {
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "ts-node-esm tests/auditEngine.test.ts"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",
