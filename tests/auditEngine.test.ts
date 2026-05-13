@@ -1,6 +1,6 @@
 /// <reference types="node" />
-import { generateAuditReport } from '../lib/audit-engine/recommendations.ts';
-import { AuditRequest } from '../lib/audit-engine/types.ts';
+import { generateAuditReport } from '../lib/audit-engine/recommendations';
+import { AuditRequest } from '../lib/audit-engine/types';
 import assert from 'node:assert';
 
 console.log('Running Audit Engine v2.0.0 Tests...\n');
@@ -80,6 +80,11 @@ try {
     // TEST 4: Overspend Detection
     const request4: AuditRequest = {
         ...baseRequest,
+        requiredSecurity: {
+            needsPrivacyMode: false,
+            needsSSO: false,
+            needsAuditLogs: false,
+        },
         currentTools: [
             {
                 toolInstanceId: 'solo-cursor',

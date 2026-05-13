@@ -124,9 +124,20 @@ export const runRightSizing = (request: AuditRequest): AuditRecommendation[] => 
 
         const cheaperPlans = vendor.plans.filter(p => {
             if (p.pricePerUser === undefined || plan.pricePerUser === undefined) return false;
-            if (p.pricePerUser >= plan.pricePerUser) return false;
+            
+            // Check for Seat Minimum Penalty (Forced Overspend)
+            const currentMinSeats = plan.minimumSeats || 1;
+            const targetMinSeats = p.minimumSeats || 1;
+            
+            const currentEffectivePrice = (plan.pricePerUser * Math.max(tool.seats, currentMinSeats)) / tool.seats;
+            const targetEffectivePrice = (p.pricePerUser * Math.max(tool.seats, targetMinSeats)) / tool.seats;
+
+            if (targetEffectivePrice >= currentEffectivePrice) return false;
             if (p.id === plan.id) return false;
             if (p.pricingModel !== 'per_seat') return false;
+            
+            // Allow individual plans as alternatives if they are cheaper, 
+            // even if the user is a 'team' or 'enterprise' (Shadow AI detection)
             if (p.targetAudience !== request.targetAudience && p.targetAudience !== 'individual') return false;
 
             if (request.requiredSecurity.needsPrivacyMode && !p.securityFlags.hasPrivacyMode) return false;
@@ -140,8 +151,11 @@ export const runRightSizing = (request: AuditRequest): AuditRecommendation[] => 
             cheaperPlans.sort((a, b) => getComparablePrice(a.pricePerUser) - getComparablePrice(b.pricePerUser));
             const optimalPlan = cheaperPlans[0];
 
-            const currentMonthlyCost = (plan.pricePerUser || 0) * tool.seats;
-            const newMonthlyCost = (optimalPlan.pricePerUser || 0) * tool.seats;
+            const currentMinSeats = plan.minimumSeats || 1;
+            const targetMinSeats = optimalPlan.minimumSeats || 1;
+
+            const currentMonthlyCost = (plan.pricePerUser || 0) * Math.max(tool.seats, currentMinSeats);
+            const newMonthlyCost = (optimalPlan.pricePerUser || 0) * Math.max(tool.seats, targetMinSeats);
             const monthlyDelta = currentMonthlyCost - newMonthlyCost;
 
             recommendations.push({
@@ -173,6 +187,7 @@ export const runRightSizing = (request: AuditRequest): AuditRecommendation[] => 
 
 export const runSecurityAudit = (request: AuditRequest): AuditRecommendation[] => {
     const recommendations: AuditRecommendation[] = [];
+    if (request.optimizationStrategy === 'cost') return recommendations;
 
     request.currentTools.forEach(tool => {
         const { vendor, plan } = getPlanDetails(tool.vendorId, tool.planId);

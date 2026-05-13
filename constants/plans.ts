@@ -79,6 +79,7 @@ export const cursorPricing: VendorPricing = {
       billingPeriod: 'monthly',
       targetAudience: 'team',
       isCustomPricing: false,
+      minimumSeats: 5,
       recommendedFor: ['startup_team', 'sme', 'agency'],
       features: ['Centralized team billing', 'Shared chats and rules', 'Role-based access control'],
       securityFlags: {

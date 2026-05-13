@@ -1,11 +1,10 @@
 {
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "ts-node-esm tests/auditEngine.test.ts"
+    "test": "tsx tests/auditEngine.test.ts"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",
@@ -16,7 +15,8 @@
     "postcss": "^8.5.14",
     "tailwindcss": "^4.3.0",
     "ts-jest": "^29.4.9",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.105.4",

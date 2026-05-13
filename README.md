@@ -6,9 +6,9 @@
 I built an end-to-end audit platform that takes a fragmented inventory of AI subscriptions (Cursor, Claude, ChatGPT, etc.) and transforms it into a defensible, executive-ready optimization report. It's designed to be a high-conversion lead-generation asset for Credex, proving the ROI of enterprise credit consolidation before a single dollar is spent.
 
 ## 📺 Demo & Screenshots
-- **Live URL:** [https://credex-audit.vercel.app](https://credex-audit.vercel.app)
+- **Live URL:** https://credex-audit-5amjfsaa9-shettys-projects-76e9a112.vercel.app/
 - **Screenshots:** (Check the `/public/screenshots` folder for high-res views)
-- **Video Walkthrough:** [YouTube/Loom Link Placeholder]
+- **Video Walkthrough:** https://youtu.be/LUhKtB77PYE
 
 ## 🛠 Quick Start
 
