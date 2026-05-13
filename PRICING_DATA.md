@@ -5,56 +5,46 @@ This document contains the source links for all pricing data used in the Credex 
 ## 1. Coding Assistants
 
 ### Cursor
-- **Hobby:** $0/mo
-- **Pro:** $20/mo
-- **Business:** $40/user/mo
-- **Source:** [https://www.cursor.com/pricing](https://www.cursor.com/pricing)
+- **Hobby:** $0/mo — https://www.cursor.com/pricing — verified 2026-05-13
+- **Pro:** $20/mo — https://www.cursor.com/pricing — verified 2026-05-13
+- **Business:** $40/user/mo — https://www.cursor.com/pricing — verified 2026-05-13
 
 ### GitHub Copilot
-- **Free:** $0/mo
-- **Pro:** $10/mo
-- **Business:** $19/user/mo
-- **Enterprise:** $39/user/mo
-- **Source:** [https://github.com/features/copilot/plans](https://github.com/features/copilot/plans)
+- **Free:** $0/mo — https://github.com/features/copilot/plans — verified 2026-05-13
+- **Pro:** $10/mo — https://github.com/features/copilot/plans — verified 2026-05-13
+- **Business:** $19/user/mo — https://github.com/features/copilot/plans — verified 2026-05-13
+- **Enterprise:** $39/user/mo — https://github.com/features/copilot/plans — verified 2026-05-13
 
 ### Windsurf
-- **Free:** $0/mo
-- **Pro:** $20/mo
-- **Teams:** $40/user/mo
-- **Source:** [https://codeium.com/windsurf/pricing](https://codeium.com/windsurf/pricing)
+- **Free:** $0/mo — https://codeium.com/windsurf/pricing — verified 2026-05-13
+- **Pro:** $20/mo — https://codeium.com/windsurf/pricing — verified 2026-05-13
+- **Teams:** $40/user/mo — https://codeium.com/windsurf/pricing — verified 2026-05-13
 
 ## 2. LLM Chat Platforms
 
 ### ChatGPT (OpenAI)
-- **Free:** $0/mo
-- **Plus:** $20/mo
-- **Team:** $30/user/mo (Monthly) / $25 (Annual)
-- **Enterprise:** Custom
-- **Source:** [https://openai.com/chatgpt/pricing/](https://openai.com/chatgpt/pricing/)
+- **Free:** $0/mo — https://openai.com/chatgpt/pricing/ — verified 2026-05-13
+- **Plus:** $20/mo — https://openai.com/chatgpt/pricing/ — verified 2026-05-13
+- **Team:** $25/user/mo (Annual) — https://openai.com/chatgpt/pricing/ — verified 2026-05-13
+- **Enterprise:** Custom — https://openai.com/chatgpt/pricing/ — verified 2026-05-13
 
 ### Claude (Anthropic)
-- **Free:** $0/mo
-- **Pro:** $20/mo
-- **Team:** $25/user/mo
-- **Enterprise:** Custom
-- **Source:** [https://www.anthropic.com/pricing#claude-ai](https://www.anthropic.com/pricing#claude-ai)
+- **Free:** $0/mo — https://www.anthropic.com/pricing#claude-ai — verified 2026-05-13
+- **Pro:** $20/mo — https://www.anthropic.com/pricing#claude-ai — verified 2026-05-13
+- **Team:** $25/user/mo — https://www.anthropic.com/pricing#claude-ai — verified 2026-05-13
 
 ### Google Gemini
-- **Free:** $0/mo
-- **Gemini Advanced:** $20/mo
-- **Business:** $20/user/mo (Annual)
-- **Source:** [https://gemini.google/advanced/](https://gemini.google/advanced/)
+- **Free:** $0/mo — https://gemini.google/advanced/ — verified 2026-05-13
+- **Gemini Advanced:** $20/mo — https://gemini.google/advanced/ — verified 2026-05-13
+- **Business:** $20/user/mo — https://gemini.google/advanced/ — verified 2026-05-13
 
 ## 3. API Direct Access
 
 ### OpenAI API
-- **Model:** gpt-4o, gpt-3.5-turbo (Usage-based)
-- **Source:** [https://openai.com/api/pricing/](https://openai.com/api/pricing/)
+- Usage-based — https://openai.com/api/pricing/ — verified 2026-05-13
 
 ### Anthropic API
-- **Model:** Claude 3.5 Sonnet, Haiku, Opus (Usage-based)
-- **Source:** [https://www.anthropic.com/pricing#anthropic-api](https://www.anthropic.com/pricing#anthropic-api)
+- Usage-based — https://www.anthropic.com/pricing#anthropic-api — verified 2026-05-13
 
-### Google AI Studio (Gemini API)
-- **Model:** Gemini 1.5 Pro/Flash
-- **Source:** [https://ai.google.dev/pricing](https://ai.google.dev/pricing)
+### Google AI Studio
+- Usage-based — https://ai.google.dev/pricing — verified 2026-05-13

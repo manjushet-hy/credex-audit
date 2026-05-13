@@ -137,9 +137,22 @@ export default function NexusAssistant() {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="bg-neutral-900/90 backdrop-blur-xl border border-white/10 p-5 rounded-2xl shadow-2xl max-w-sm"
+            className="bg-neutral-900/90 backdrop-blur-xl border border-white/10 p-5 rounded-2xl shadow-2xl max-w-sm relative"
           >
-            <div className="flex items-center justify-between mb-3">
+            <button 
+              onClick={() => {
+                window.speechSynthesis.cancel();
+                setIsListening(false);
+                setIsSpeaking(false);
+                setIsProcessing(false);
+                setTranscript('');
+              }}
+              className="absolute top-4 right-4 text-white/20 hover:text-white transition-colors"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="flex items-center justify-between mb-3 pr-8">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
                 <span className="text-[10px] font-bold uppercase tracking-widest text-white/40">Nexus Intelligence</span>
